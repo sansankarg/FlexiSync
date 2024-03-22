@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .child{
+        padding: 3% 3% 3% 3%;
+    }
+    .parent{
+        background-color: rgb(31, 31, 31);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 10%;
+    }
+    button{
+        background-color: rgb(24, 24, 24);
+        color: rgb(156, 220, 254);
+        height: 40px;
+        width: 140px;
+        border-radius: 10px;
+    }
+</style>
+<body class="parent">
+    <center>
+            <div class="child" style="color: rgb(156, 220, 254);">MINI PROJECT</div>
+            <div class="child"><a href="videostream.html" id="vidStr"><button><i>Video Stream</i></button></a></div>
+            <div class="child"><a href="controls.html" id="other"><button><i>Appliances control</i></button></a></div>
+    </center>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+    // $(function() {     
+    //   $('a#other').bind('click', function() {
+    //     $.getJSON('/other',
+    //         function(data) {
+                
+    //     });
+    //     return false;
+    //   });
+      
+    //   $('avideostream.htmlvidStr').bind('click', function() {
+    //     $.getJSON('/vidStr',
+    //         function(data) {
+                
+    //     });
+    //     return false;
+    //   });
+    // });    
+</script>
+</html>

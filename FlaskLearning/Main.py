@@ -1,25 +1,34 @@
 from flask import Flask, render_template, request, Response
 import cv2
+from flask_mqtt import Mqtt
 
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return render_template('main_page.html')
+    return render_template('home.html')
 
-@app.route('/videostream.html')
-def vidStr():
+@app.route('/view.html')
+def view():
     print ("redirected to stream page")
-    return render_template('videostream.html')
+    return render_template('view.html')
+
+@app.route('/about.html')
+def about():
+    print ("redirected to stream page")
+    return render_template('about.html')
+@app.route('/home.html')
+def home():
+    print ("redirected to stream page")
+    return render_template('home.html')
+@app.route('/routine.html')
+def routine():
+    print ("redirected to stream page")
+    return render_template('routine.html')
 
 @app.route('/main_page.html')
 def main():
     print ("redirected to main page")
     return render_template('main_page.html')
-
-@app.route('/controls.html')
-def controls():
-    print ("redirected to control page")
-    return render_template('controls.html')
 
 @app.route('/left')
 def left():
@@ -47,15 +56,10 @@ def l_off():
     print ("Light is off")
     return ("nothing")
 
-
-camera = cv2.VideoCapture(0)  # use 0 for web camera
-#  for cctv camera use rtsp://username:password@ip_address:554/user=username_password='password'_channel=channel_number_stream=0.sdp' instead of camera
-# for local webcam use cv2.VideoCapture(0)
-
-def gen_frames():  # generate frame by frame from camera
+def gen_frames():
+    camera = cv2.VideoCapture(0)
     while True:
-        # Capture frame-by-frame
-        success, frame = camera.read()  # read the camera frame
+        success, frame = camera.read()
         if not success:
             break
         else:
@@ -67,7 +71,6 @@ def gen_frames():  # generate frame by frame from camera
 
 @app.route('/video_feed')
 def video_feed():
-    #Video streaming route. Put this in the src attribute of an img tag
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 

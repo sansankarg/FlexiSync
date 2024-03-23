@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flexbox;
+        flex-direction: row;
+        margin: 0;
+        height: 100vh;
+        background-color: blue;
+        flex-grow: 1;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .child1{
+        background-color: black;
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .child2{
+        background-color: black;
+        height: 10%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        border-color: rgb(152, 94, 255);
+        color: rgb(152, 94, 255);
+    }
+    .pages{
+        height: 100%;
+        width: 25%;
+    }
+    button{
+        height: 100%;
+        width: 100%;
+        margin: 1%;
+        background-color: rgb(31, 31, 31);
+        color: rgb(152, 94, 255);
+    }
+</style>
+<body>
+    <div class="child2"><h2>DEVICES</h2></div>
+    <div class="child1">
+        <center>
+            <div class="child" style="color: rgb(156, 220, 254);">Light</div>
+            <div class="child"><a href="#" id="light_on"><button><i>On</i></button></a></div>
+            <div class="child"><a href="#" id="light_off"><button><i>Off</i></button></a></div>
+    </center>
+    </div>
+    <div class="child2">
+        <div class="child2">
+            <div class="pages"><a href="home.html"><button class="button">Devices</button></a></div>
+            <div class="pages"><a href="view.html"><button class="button">view</button></a></div>
+            <div class="pages"><a href="routine.html"><button class="button">Routine</button></a></div>
+            <div class="pages"><a href="about.html"><button class="button">About</button></a></div>
+        </div>
+    </div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+    $(function() {     
+      $('a#light_on').bind('click', function() {
+        $.getJSON('/light_on',
+            function(data) {
+                
+        });
+        return false;
+      });
+      
+      $('a#light_off').bind('click', function() {
+        $.getJSON('/light_off',
+            function(data) {
+                
+        });
+        return false;
+      });
+    });    
+</script>
+</html>

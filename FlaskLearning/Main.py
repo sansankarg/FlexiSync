@@ -4,7 +4,7 @@ import os
 from flask_mqtt import Mqtt
 
 app = Flask(__name__)
-app.config['MQTT_BROKER_URL'] = '192.168.164.51'  # use the free broker from HIVEMQ
+app.config['MQTT_BROKER_URL'] = '192.168.66.51'  # use the free broker from HIVEMQ
 app.config['MQTT_BROKER_PORT'] = 1883  # default port for non-tls connection
 app.config['MQTT_USERNAME'] = 'arthur'  # set the username here if you need authentication for the broker
 app.config['MQTT_PASSWORD'] = '5464'  # set the password here if the broker demands authentication
@@ -61,36 +61,42 @@ def right():
 @app.route('/dev1_on')
 def dev1_on():
     print ("dev1 is on")
-    mqtt.publish('connect', 'onn')
+    mqtt.publish('connect', '1_onn')
     return ("nothing")
 @app.route('/dev1_off')
 def dev1_off():
     print ("dev1 is off")
-    mqtt.publish('connect', 'off')
+    mqtt.publish('connect', '1_off')
     return ("nothing")
 @app.route('/dev2_on')
 def dev2_on():
     print ("dev2 is on")
+    mqtt.publish('connect', '2_onn')
     return ("nothing")
 @app.route('/dev2_off')
 def dev2_off():
     print ("dev2 is off")
+    mqtt.publish('connect', '2_off')
     return ("nothing")
 @app.route('/dev3_on')
 def dev3_on():
     print ("dev3 is on")
+    mqtt.publish('connect', '3_onn')
     return ("nothing")
 @app.route('/dev3_off')
 def dev3_off():
     print ("dev3 is off")
+    mqtt.publish('connect', '3_off')
     return ("nothing")
 @app.route('/dev4_on')
 def dev4_on():
     print ("dev4 is on")
+    mqtt.publish('connect', '4_onn')
     return ("nothing")
 @app.route('/dev4_off')
 def dev4_off():
     print ("dev4 is off")
+    mqtt.publish('connect', '4_off')
     return ("nothing")
 
 def gen_frames():

@@ -99,17 +99,17 @@ def dev4_off():
     mqtt.publish('connect', '4_off')
     return ("nothing")
 @app.route('/routine_1')
-def dev4_off():
+def routine_1():
     print ("Routine 1 is enabled")
     os.system("python routine1.py")
     return ("nothing")
 @app.route('/routine_2')
-def dev4_off():
+def routine_2():
     print ("Routine 2 is enabled")
     os.system("python routine2.py")
     return ("nothing")
 @app.route('/routine_3')
-def dev4_off():
+def routine_3():
     print ("Routine 3 is enabled")
     os.system("python routine3.py")
     return ("nothing")

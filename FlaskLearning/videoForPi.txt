@@ -1,1 +1,0 @@
-Add a videocapture button inside the function to make the pi find index of camera easily

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(25, 16, 37);
+    flex-grow: 1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.child1{
+    display: flex;
+    flex-direction: column;
+    height: 8vh;
+    background-color: rgb(32, 23, 44);
+    color: rgb(156, 220, 254);
+    justify-content: center;
+}
+.child2{
+    display: flex;
+    flex-direction: column;
+    height: 82vh;
+    justify-content: center;
+    align-items: center;
+}
+.child2x{
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10%
+
+}
+.child3{
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+}
+.pages{
+    height: 100%;
+    width: 25%;
+}
+.button{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(66, 9, 126);
+    color: rgb(156, 220, 254);
+    border: 1px solid rgb(25, 16, 37);
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(32, 23, 44);
+    color: white;
+}
+.button1{
+    border-radius: 5px;
+    border: 5cap solid rgb(156, 220, 254);
+    background-color: rgb(66, 9, 126);
+    color: rgb(156, 220, 254);
+    border: 1px solid rgb(25, 16, 37);
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(32, 23, 44);
+    color: white;
+}
+
+</style>
+<body>
+    <div class="child1"><h2>Routine</h2></div>
+    <div class="child2">
+        <center>
+            <div class="child2x">
+                <div class="child" style="color: rgb(156, 220, 254);">ROUTINE_1</div>
+                <div class="child"><a href="#" id="routine_1"><button class="button1">Enable</button></a></div>
+            </div><br>
+            <div class="child2x">
+                <div class="child" style="color: rgb(156, 220, 254);">ROUTINE_2</div>
+                <div class="child"><a href="#" id="routine_2"><button class="button1">Enable</button></a></div>
+            </div><br>
+            <div class="child2x">
+                <div class="child" style="color: rgb(156, 220, 254);">ROUTINE_3</div>
+                <div class="child"><a href="#" id="routine_3"><button class="button1">Enable</button></a></div>
+            </div><br>
+            
+        </center>
+    </div>
+    <div class="child3">
+            <div class="pages"><a href="home.html"><button class="button">Devices</button></a></div>
+            <div class="pages"><a href="view.html"><button class="button">view</button></a></div>
+            <div class="pages"><a href="routine.html"><button class="button">Routine</button></a></div>
+            <div class="pages"><a href="about.html"><button class="button">About</button></a></div>
+    </div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+    $(function() {     
+      $('a#routine_1').bind('click', function() {
+        $.getJSON('/routine_1',
+            function(data) {
+                
+        });
+        return false;
+      });
+      $('a#routine_2').bind('click', function() {
+        $.getJSON('/routine_2',
+            function(data) {
+                
+        });
+        return false;
+      });
+      $('a#routine_3').bind('click', function() {
+        $.getJSON('/routine_3',
+            function(data) {
+                
+        });
+        return false;
+      });
+    });
+</script>
+</html>

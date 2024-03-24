@@ -1,8 +1,18 @@
 from flask import Flask, render_template, request, Response
 import cv2
 import os
+from flask_mqtt import Mqtt
 
 app = Flask(__name__)
+app.config['MQTT_BROKER_URL'] = '192.168.164.51'  # use the free broker from HIVEMQ
+app.config['MQTT_BROKER_PORT'] = 1883  # default port for non-tls connection
+app.config['MQTT_USERNAME'] = 'arthur'  # set the username here if you need authentication for the broker
+app.config['MQTT_PASSWORD'] = '5464'  # set the password here if the broker demands authentication
+app.config['MQTT_KEEPALIVE'] = 5  # set the time interval for sending a ping to the broker to 5 seconds
+app.config['MQTT_TLS_ENABLED'] = False  # set TLS to disabled for testing purposes
+
+mqtt = Mqtt(app)
+
 @app.route('/')
 def index():
     return render_template('home.html')
@@ -51,10 +61,12 @@ def right():
 @app.route('/dev1_on')
 def dev1_on():
     print ("dev1 is on")
+    mqtt.publish('connect', 'onn')
     return ("nothing")
 @app.route('/dev1_off')
 def dev1_off():
     print ("dev1 is off")
+    mqtt.publish('connect', 'off')
     return ("nothing")
 @app.route('/dev2_on')
 def dev2_on():

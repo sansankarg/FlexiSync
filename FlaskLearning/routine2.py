@@ -1,4 +1,4 @@
-from Main.py import mqtt
+from Main import mqtt
 
 mqtt.publish('connect', '1_off')
 mqtt.publish('connect', '2_off')

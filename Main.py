@@ -4,12 +4,12 @@ import os
 from flask_mqtt import Mqtt
 
 app = Flask(__name__)
-app.config['MQTT_BROKER_URL'] = '192.168.66.51'  # use the free broker from HIVEMQ
-app.config['MQTT_BROKER_PORT'] = 1883  # default port for non-tls connection
-app.config['MQTT_USERNAME'] = 'arthur'  # set the username here if you need authentication for the broker
-app.config['MQTT_PASSWORD'] = '5464'  # set the password here if the broker demands authentication
-app.config['MQTT_KEEPALIVE'] = 5  # set the time interval for sending a ping to the broker to 5 seconds
-app.config['MQTT_TLS_ENABLED'] = False  # set TLS to disabled for testing purposes
+app.config['MQTT_BROKER_URL'] = 'Raspi_ip_address'
+app.config['MQTT_BROKER_PORT'] = 1883  #default one No need to change
+app.config['MQTT_USERNAME'] = ''
+app.config['MQTT_PASSWORD'] = '' #Fill both username and password if you have one or else leave it empty
+app.config['MQTT_KEEPALIVE'] = 5
+app.config['MQTT_TLS_ENABLED'] = False
 
 mqtt = Mqtt(app)
 
@@ -124,7 +124,7 @@ def gen_frames():
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
 @app.route('/video_feed')

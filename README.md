@@ -15,6 +15,7 @@ Acquiring Raspberry Pi, Arduino boards with WiFi modules, sensors, and relays en
 
 Setting up a server on the Raspberry Pi enables local handling of web requests and responses. Global tunneling expands accessibility beyond the local network, allowing remote access and control.
 - **Webpage Template:**
+  
 Customizing the provided webpage template tailors the user interface to suit the automation needs, providing an intuitive platform for interacting with the system.
 - **Machine-to-Machine Messaging Protocol:**
 

@@ -181,9 +181,9 @@ Open <YOUR-DOMAIN> in browser to view the server
 
 ## The final webpage
 
-In this sample webpage template, we will have four pages: Devices, View, Routine, and About.
+In this sample webpage template, we will have four pages: Control, View, Routine, and About.
 
-- The Devices page is for relay control, allowing us to control devices through our server globally.
+- The Control page is for relay control, allowing us to control devices through our server globally.
 - In the View page, we can view the live stream of video through the default Pi camera. Additionally, you can add sensor data for viewing by modifying the code.
 - The Routine page is highly customizable. I have uploaded three default routines with basic Python code, but you can easily customize them according to your industrial application needs.
 - Lastly, there is the About page where you can add your own details. 

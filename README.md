@@ -8,22 +8,22 @@ This project is a self-created server that is accessible globally, serving as a 
 
 Here's how each requirement contributes to the overall functionality:
 
-- Hardware Requirements:
+- **Hardware Requirements:**
 
 Acquiring Raspberry Pi, Arduino boards with WiFi modules, sensors, and relays ensures you have the necessary physical components to build the automation system.
-- Local Server:
+- **Local Server:**
 
 Setting up a server on the Raspberry Pi enables local handling of web requests and responses. Global tunneling expands accessibility beyond the local network, allowing remote access and control.
-- Webpage Template:
-
+- **Webpage Template:**
+  
 Customizing the provided webpage template tailors the user interface to suit the automation needs, providing an intuitive platform for interacting with the system.
-- Machine-to-Machine Messaging Protocol:
+- **Machine-to-Machine Messaging Protocol:**
 
 Configuring an m2m protocol on the Raspberry Pi establishes a communication protocol between devices, sensors, and the server. This facilitates the seamless exchange of data and control commands.
-- Visual Communication with OpenCV:
+- **Visual Communication with OpenCV:**
 
 Integrating OpenCV brings advanced computer vision capabilities to the system, enabling tasks such as object detection, recognition, or tracking in industrial environments. This enhances the system's functionality and versatility.
-- Tunneling:
+- **Tunneling:**
 
 Setting up a static server with ngrok ensures global accessibility to the local Flask server over the internet. This feature allows users to remotely monitor, manage, and control the automation system from anywhere.
 

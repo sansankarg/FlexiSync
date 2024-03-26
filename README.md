@@ -1,5 +1,5 @@
 
-# Server for automations
+# FlexiSync: Your Worldwide Automation Companion
 This project is a self-created server that is accessible globally, serving as a foundational platform for various industrial or home automation endeavors. It allows users to update sensor details, stream live videos with computer vision capabilities, and customize recursive routines to meet specific needs. Importantly, your project doesn't rely on paid third-party software or API providers, making it particularly valuable for students and developers looking for a cost-effective and customizable solution for automation projects. With its versatility and accessibility, this project empowers users to tailor automation systems according to their unique requirements, fostering innovation and experimentation in the realm of automation technologies.
 
 

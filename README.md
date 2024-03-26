@@ -179,7 +179,7 @@ Finally, run the Flask server by executing.Make sure you are on the same directo
 
 Open <YOUR-DOMAIN> in browser to view the server
 
-## The final webpage
+## The Final Webpage
 
 In this sample webpage template, we will have four pages: Control, View, Routine, and About.
 

@@ -98,11 +98,7 @@ Before installing ngrok you have to create a ngrok account for authtoken.After t
 ```bash
   sudo tar xvzf ./ngrok-v3-stable-linux-arm64.tgz -C /usr/local/bin
 ```
-Now set the authtoken
 
-```bash
-  sudo tar xvzf ./ngrok-v3-stable-linux-arm64.tgz -C /usr/local/bin
-```
 
 Now link with the ngrok account using aut token
 

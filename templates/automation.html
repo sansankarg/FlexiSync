@@ -78,55 +78,32 @@
 
 </style>
 <body>
+    <form action="" method="post">
     <div class="child1"><h2>Routine</h2></div>
     <div class="child2">
         <center>
             <div class="child2x">
                 <div class="child" style="color: rgb(156, 220, 254);">ROUTINE_1</div>
-                <div class="child"><a href="#" id="routine_1"><button class="button1">Enable</button></a></div>
+                <div class="child"><button class = "button1" name = "routine1" value = "enable">routine_1</button></div>
             </div><br>
             <div class="child2x">
                 <div class="child" style="color: rgb(156, 220, 254);">ROUTINE_2</div>
-                <div class="child"><a href="#" id="routine_2"><button class="button1">Enable</button></a></div>
+                <div class="child"><button class = "button1" name = "routine2" value = "enable">routine_2</button></div>
             </div><br>
             <div class="child2x">
                 <div class="child" style="color: rgb(156, 220, 254);">ROUTINE_3</div>
-                <div class="child"><a href="#" id="routine_3"><button class="button1">Enable</button></a></div>
+                <div class="child"><button class = "button1" name = "routine3" value = "enable">routine_3</button></div>
             </div><br>
             
         </center>
     </div>
+    </form>
     <div class="child3">
-            <div class="pages"><a href="home.html"><button class="button">Control</button></a></div>
-            <div class="pages"><a href="view.html"><button class="button">View</button></a></div>
-            <div class="pages"><a href="routine.html"><button class="button">Routine</button></a></div>
+            <div class="pages"><a href="control.html"><button class="button">Control</button></a></div>
+            <div class="pages"><a href="access.html"><button class="button">Access</button></a></div>
+            <div class="pages"><a href="automation.html"><button class="button">Automation</button></a></div>
             <div class="pages"><a href="about.html"><button class="button">About</button></a></div>
     </div>
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type=text/javascript>
-    $(function() {     
-      $('a#routine_1').bind('click', function() {
-        $.getJSON('/routine_1',
-            function(data) {
-                
-        });
-        return false;
-      });
-      $('a#routine_2').bind('click', function() {
-        $.getJSON('/routine_2',
-            function(data) {
-                
-        });
-        return false;
-      });
-      $('a#routine_3').bind('click', function() {
-        $.getJSON('/routine_3',
-            function(data) {
-                
-        });
-        return false;
-      });
-    });
-</script>
 </html>

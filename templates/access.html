@@ -25,7 +25,7 @@
 .child2{
     display: flex;
     flex-direction: column;
-    height: 82vh;
+    height: 72vh;
     justify-content: center;
     align-items: center;
 }
@@ -41,6 +41,12 @@
 .child3{
     display: flex;
     flex-direction: row;
+    height: 10vh;
+}
+.child4{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     height: 10vh;
 }
 .pages{
@@ -98,64 +104,31 @@
     }
 </style>
 <body>
+<form action="" method="post">
     <div class="child1"><h2>CAM VIEW</h2></div>
     <div class="child2">
         <div id="newpost" class="video">
             <img style="" src="{{ url_for('video_feed') }}">
         </div>
         <div class="navi">
-            <a href=# id=left class="navib">
-            <button class="button1">
-                left
-            </button>
-            </a>
-            <a href=# id=center class="navib">
-            <button class="button1">
-                center
-            </button>
-            </a>
-            <a href=# id=right class="navib">
-            <button class="button1">
-                right
-            </button>
-            </a>
+            <div class="child"><button class = "button1" name = "pos" value = "Left">Left</button></div>
+            <div class="child"><button class = "button1" name = "pos" value = "Center">Center</button></div>
+            <div class="child"><button class = "button1" name = "pos" value = "Right">Right</button></div>
         </div>
     </div>
-    <div class="child3">
-        <div class="pages"><a href="home.html"><button class="button">Control</button></a></div>
-        <div class="pages"><a href="view.html"><button class="button">View</button></a></div>
-        <div class="pages"><a href="routine.html"><button class="button">Routine</button></a></div>
-        <div class="pages"><a href="about.html"><button class="button">About</button></a></div>
+    </form>
+    <div class="child4">
+            <div class="pages"><p>Data 1 : {{ data['1'] }}</p></div>
+            <div class="pages"><p>Data 2 : {{ data['2'] }}</p></div>
+            <div class="pages"><p>Data 3 : {{ data['3'] }}</p></div>
     </div>
+    <div class="child3">
+            <div class="pages"><a href="control.html"><button class="button">Control</button></a></div>
+            <div class="pages"><a href="access.html"><button class="button">Access</button></a></div>
+            <div class="pages"><a href="automation.html"><button class="button">Automation</button></a></div>
+            <div class="pages"><a href="about.html"><button class="button">About</button></a></div>
+    </div>
+
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type=text/javascript>
-        $(function() {
-          $('a#left').bind('click', function() {
-            $.getJSON('/left',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-          
-          $('a#center').bind('click', function() {
-            $.getJSON('/center',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-        
-        $('a#right').bind('click', function() {
-            $.getJSON('/right',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-          
-        
-        });    
-</script>
 </html>

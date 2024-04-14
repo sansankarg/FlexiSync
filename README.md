@@ -174,7 +174,7 @@ For static domain
 Finally, run the Flask server by executing.Make sure you are on the same directory of Server.
 
 ```bash
-  python Main.py
+  python app.py
 ```
 
 Open <YOUR-DOMAIN> in browser to view the server

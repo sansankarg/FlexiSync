@@ -1,7 +1,8 @@
+<h1 align="center" id="title">Modular iot automation solution</h1>
 
-# FlexiSync: Your Worldwide Automation Companion
-This project is a self-created server that is accessible globally, serving as a foundational platform for various industrial or home automation endeavors. It allows users to update sensor details, stream live videos with computer vision capabilities, and customize recursive routines to meet specific needs. Importantly, your project doesn't rely on paid third-party software or API providers, making it particularly valuable for students and developers looking for a cost-effective and customizable solution for automation projects. With its versatility and accessibility, this project empowers users to tailor automation systems according to their unique requirements, fostering innovation and experimentation in the realm of automation technologies.
+<p align="center"><img src="https://socialify.git.ci/sansankarg/Modular-Automation-Server/image?name=1&amp;owner=1&amp;theme=Dark" alt="project-image"></p>
 
+<p id="description">This project is a self-created server that is accessible globally serving as a foundational platform for various industrial or home automation endeavors. It allows users to update sensor details stream live videos with computer vision capabilities and customize recursive routines to meet specific needs. Importantly your project doesn't rely on paid third-party software or API providers making it particularly valuable for students and developers looking for a cost-effective and customizable solution for automation projects. With its versatility and accessibility this project empowers users to tailor automation systems according to their unique requirements fostering innovation and experimentation in the realm of automation technologies.</p>
 
 
 ## Requirements and its contributions
@@ -23,6 +24,11 @@ Configuring an m2m protocol on the Raspberry Pi establishes a communication prot
 - **Visual Communication with OpenCV:**
 
 Integrating OpenCV brings advanced computer vision capabilities to the system, enabling tasks such as object detection, recognition, or tracking in industrial environments. This enhances the system's functionality and versatility.
+
+- **Database:**
+
+To store the sensor datas we need a database that runs in the server which is also integrated with the local server
+
 - **Tunneling:**
 
 Setting up a static server with ngrok ensures global accessibility to the local Flask server over the internet. This feature allows users to remotely monitor, manage, and control the automation system from anywhere.
@@ -116,9 +122,21 @@ Then to integrate mqtt with flask we need to install another package.
   pip install flask-mqtt
 ```
 
+### SQLites installation
 
+Step 1 − Go to SQLite download page, and download precompiled binaries from Windows section.
 
+Step 2 − Download sqlite-shell-win32-*.zip and sqlite-dll-win32-*.zip zipped files.
 
+Step 3 − Create a folder C:\>sqlite and unzip above two zipped files in this folder, which will give you sqlite3.def, sqlite3.dll and sqlite3.exe files.
+
+Step 4 − Add C:\>sqlite in your PATH environment variable and finally go to the command prompt and issue sqlite3 command, which should display the following result.
+
+```bash
+SQLite version 3.45.2 2024-03-12 11:06:23 (UTF-16 console I/O)
+Enter ".help" for usage hints.
+Use ".open FILENAME" to reopen on a persistent database.
+```
 
 
 
@@ -185,6 +203,12 @@ In this sample webpage template, we will have four pages: Control, View, Routine
 - Lastly, there is the About page where you can add your own details. 
 
 Feel free to share your own implementations using this code for your application.
+
+<h2>Project Screenshots:</h2>
+
+<img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image1.jpg" alt="project-screenshot" width="270" height="585">   <img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image2.jpg" alt="project-screenshot" width="270" height="585">
+<img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image3.jpg" alt="project-screenshot" width="270" height="585">  <img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image4.jpg" alt="project-screenshot" width="270" height="585">
+
 
 
 

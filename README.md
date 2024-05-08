@@ -197,17 +197,25 @@ Open <YOUR-DOMAIN> in browser to view the server
 
 In this sample webpage template, we will have four pages: Control, View, Routine, and About.
 
-- The Control page is for relay control, allowing us to control devices through our server globally.
-- In the View page, we can view the live stream of video through the default Pi camera. Additionally, you can add sensor data for viewing by modifying the code.
+- The Device page is for relay control, allowing us to control devices through our server globally.
+  Function provided for relay control is : getstate()
+ this will set relay control and return the status of relay.
+- In the View page, we can view the live stream of video through the default Pi camera. Additionally, you can add sensor data for viewing.
+  Function provided for this are : getdata() for sensor data, gen_frames() for video feed, getdirection()
+ to move the camera
 - The Routine page is highly customizable. I have uploaded three default routines with basic Python code, but you can easily customize them according to your industrial application needs.
-- Lastly, there is the About page where you can add your own details. 
+  Function provided for routine is getroutine()
+- Lastly, there is the About page where you can add your own details.
+
+the all the funtions mentioned above are in functionsset.py file which get the value from the user and perform the output
+the above mentioned pages screenshots were given below with basic functionalities.
 
 Feel free to share your own implementations using this code for your application.
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image1.jpg" alt="project-screenshot" width="270" height="585">   <img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image2.jpg" alt="project-screenshot" width="270" height="585">
-<img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image3.jpg" alt="project-screenshot" width="270" height="585">  <img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image4.jpg" alt="project-screenshot" width="270" height="585">
+<img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image2.jpg" alt="project-screenshot" width="270" height="585">   <img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image3.jpg" alt="project-screenshot" width="270" height="585">
+<img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image4.jpg" alt="project-screenshot" width="270" height="585">  <img src="https://github.com/sansankarg/Modular-Automation-Server/blob/master/Screenshots/image1.jpg" alt="project-screenshot" width="270" height="585">
 
 
 

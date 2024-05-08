@@ -1,17 +1,17 @@
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request
 from functionsset import functions as fn
-# from flask_mqtt import Mqtt
+from flask_mqtt import Mqtt
+from calldatabase import data1, data2, data3
 
 app = Flask(__name__)
-# app.config['MQTT_BROKER_URL'] = 'Raspi_ip_address'
-# app.config['MQTT_BROKER_PORT'] = 1883  #default one No need to change
-# app.config['MQTT_USERNAME'] = ''
-# app.config['MQTT_PASSWORD'] = '' #Fill both username and password if you have one or else leave it empty
-# app.config['MQTT_KEEPALIVE'] = 5
-# app.config['MQTT_TLS_ENABLED'] = False
+app.config['MQTT_BROKER_URL'] = '127.0.0.1'
+app.config['MQTT_BROKER_PORT'] = 1883  #default one No need to change
+app.config['MQTT_USERNAME'] = ''
+app.config['MQTT_PASSWORD'] = '' #Fill both username and password if you have one or else leave it empty
+app.config['MQTT_KEEPALIVE'] = 5
+app.config['MQTT_TLS_ENABLED'] = False
 
 # mqtt = Mqtt(app)
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('about.html')
@@ -27,8 +27,7 @@ def control():
 
 @app.route('/access.html', methods=['GET', 'POST'])
 def access():
-    fn.getdirection('pos')
-    value = { '1' : 10, '2' : 34, '3' : 345}
+    value = {'1': fn.getdata(fn, 's1'), '2': fn.getdata(fn, 's2'), '3': fn.getdata(fn, 's3')}
     print ("redirected to view page")
     return render_template('access.html', data = value)
 

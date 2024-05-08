@@ -1,8 +1,21 @@
+import string
+from typing import List, Any
+
 from flask import Flask, render_template, request, Response
 import os
 import cv2
-#from main import mqtt
+import requests
+import sqlite3
 class functions():
+
+    def getdata(self, val):
+        self.connection = sqlite3.connect('Database/sensordata.db')
+        self.cur = self.connection.cursor()
+        str = "SELECT "+val+" FROM data;"
+        self.cur.execute(str)
+        data = self.cur.fetchall()
+        self.connection.commit()
+        return data[0][0]
     def setdata(self, value):
         self.getdirection('pos')
         print("redirected to view page")
@@ -21,6 +34,7 @@ class functions():
                 os.system("python ser.py 179 180 0.1 1")
 
     def getstate(id, mqttmsgon, mqttmsgoff):
+        # from app import mqtt
         if request.method == 'POST':
             id = request.form.get(id)
             if id == 'On':
